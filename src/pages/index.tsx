@@ -4,8 +4,14 @@ import Link from "next/link";
 import Image from "next/image";
 
 import { api } from "~/utils/api";
+import { ReactNode } from "react";
+import React, { ReactElement } from "react";
 
-const NavPanel = ({ children }) => {
+type NavPanelProps = {
+  children: ReactElement;
+};
+
+const NavPanel: React.FC<NavPanelProps> = ({ children }) => {
   return (
     <div className="min-h-full rounded-l-3xl rounded-r-md border-8 border-zinc-800 p-3">
       {children}
@@ -13,7 +19,7 @@ const NavPanel = ({ children }) => {
   );
 };
 
-const NavButton = ({ children }) => {
+const NavButton: React.FC<NavPanelProps> = ({ children }) => {
   return (
     <div className="h-15 items-center rounded-lg p-3 hover:border-2 hover:border-zinc-800 hover:bg-zinc-800">
       {children}
